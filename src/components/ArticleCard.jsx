@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-function ArticleCard({ searchedArticles, articleByTopic }) {
+function ArticleCard({ searchedArticles, articleByTopic, currArticle }) {
   let mapArticles = searchedArticles
   if (articleByTopic){
     mapArticles = articleByTopic
@@ -27,7 +27,7 @@ function ArticleCard({ searchedArticles, articleByTopic }) {
               </li>
               <li>
               <li>
-                <p>{article.body.substr(0,100)}...</p>
+                <p>{article.body}</p>
               </li>
                 <p>Posted by {article.author}</p>
               </li>
