@@ -19,7 +19,7 @@ function ArticleCardTopic({ articleByTopic }) {
                 </Link>
               </li>
               <li>
-                <p>Topic: {article.created_at}</p>
+                <p>Posted: {article.created_at}</p>
               </li>
               <li>
               <li>

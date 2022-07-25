@@ -29,7 +29,6 @@ function ArticleList({articleSearch, articleFilter}) {
     fetch(`https://nc-news-backendproject.herokuapp.com/api${url[0]}`)
       .then((res) => res.json())
       .then((body) => {
-        console.log(url)
         setSearchedArticles(body.articles);
         if (!body.articles.length) {
           throw Error("could not fetch the data for that resource");

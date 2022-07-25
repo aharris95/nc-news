@@ -19,11 +19,11 @@ function ArticleCard({ searchedArticles }) {
                 </Link>
               </li>
               <li>
-                <p>Topic: {article.created_at}</p>
+                <p>Posted: {article.created_at}</p>
               </li>
               <li>
               <li>
-                <p>{article.body}</p>
+                <p>{article.body.substr(0,100)}...</p>
               </li>
                 <p>Posted by {article.author}</p>
               </li>
