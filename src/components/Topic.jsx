@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import ArticleCardTopic from "./ArticleCardTopic";
+import ArticleCard from "./ArticleCard";
 
 function Topic() {
     const [articleByTopic, setArticleByTopic] = useState([]);
@@ -20,7 +20,7 @@ useEffect(() => {
     return (  
         <>
         {isLoading && <div>Loading...</div>}
-      <ArticleCardTopic articleByTopic={articleByTopic} />
+      <ArticleCard articleByTopic={articleByTopic} />
         </>
     );
 }

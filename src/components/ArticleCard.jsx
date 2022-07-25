@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 
 
-function ArticleCard({ searchedArticles }) {
+function ArticleCard({ searchedArticles, articleByTopic }) {
+  let mapArticles = searchedArticles
+  if (articleByTopic){
+    mapArticles = articleByTopic
+  }
   return (
     <section className="article-list">
-      {searchedArticles.map((article) => {
+      {mapArticles.map((article) => {
         return (
           <section className="article-card" key={article.article_id}>
             <ul className="cardArticleList">

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ArticleCard from "./ArticleCard";
 
-function ArticleList({articleSearch, articleFilter}) {
+function ArticleList({articleFilter}) {
   const [searchedArticles, setSearchedArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -10,22 +10,14 @@ function ArticleList({articleSearch, articleFilter}) {
     setIsLoading(true);
     let url = [];
 
-    if (!articleSearch && !articleFilter) {
+    if (!articleFilter) {
       url.shift();
       url.push("/articles/");
     }
-    if (articleSearch && !articleFilter) {
-      url.shift();
-      url.push(`/articles/?search=${articleSearch}`);
-    }
-    if (!articleSearch && articleFilter) {
+    if (articleFilter) {
       url.shift();
       url.push(`/articles/?filter=${articleFilter}`);
-    } else if (articleSearch && articleFilter) {
-      url.shift();
-      url.push(`/articles/?search=${articleSearch}&&?/articles/?filter=football=${articleFilter}`);
-    }
-
+    } 
     fetch(`https://nc-news-backendproject.herokuapp.com/api${url[0]}`)
       .then((res) => res.json())
       .then((body) => {
@@ -40,7 +32,7 @@ function ArticleList({articleSearch, articleFilter}) {
         setError(e.message);
         setIsLoading(false);
       });
-  }, [articleSearch, setSearchedArticles, articleFilter]);
+  }, [setSearchedArticles, articleFilter]);
 
   return (
     <>
