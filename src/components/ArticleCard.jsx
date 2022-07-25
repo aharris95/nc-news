@@ -6,9 +6,6 @@ function ArticleCard({ searchedArticles, articleByTopic, currArticle }) {
   if (articleByTopic){
     mapArticles = articleByTopic
   }
-  if(currArticle){
-    mapArticles = [currArticle] 
-  }
   return (
     <section className="article-list">
       {mapArticles.map((article) => {
