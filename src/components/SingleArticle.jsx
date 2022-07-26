@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import CommentList from "./CommentList"
 import Vote from "./Vote";
 
+
 export default function SingleItem() {
   const [currArticle, setCurrArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
