@@ -3,13 +3,15 @@ import { useState, useEffect } from "react";
 import ArticleCard from "./ArticleCard";
 
 function Topic() {
-    const [articleByTopic, setArticleByTopic] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const { topic } = useParams();
+  const [articleByTopic, setArticleByTopic] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const { topic } = useParams();
 
-useEffect(() => {
+  useEffect(() => {
     setIsLoading(true);
-    fetch(`https://nc-news-backendproject.herokuapp.com/api/articles/?filter=${topic}`)
+    fetch(
+      `https://nc-news-backendproject.herokuapp.com/api/articles/?filter=${topic}`
+    )
       .then((res) => res.json())
       .then((body) => {
         setArticleByTopic(body.articles);
@@ -17,12 +19,12 @@ useEffect(() => {
       });
   }, [topic]);
 
-    return (  
-        <>
-        {isLoading && <div>Loading...</div>}
+  return (
+    <>
+      {isLoading && <div>Loading...</div>}
       <ArticleCard articleByTopic={articleByTopic} />
-        </>
-    );
+    </>
+  );
 }
 
 export default Topic;
