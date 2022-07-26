@@ -1,18 +1,14 @@
 import * as api from "../api";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
 
 function Vote({currId, currVotes}) {
 const [voteCount, setVoteCount] = useState(currVotes)
 
-useEffect(()=>{
-    currVotes = voteCount 
-}, [])
-
-
     const handleVote = (vote) => {
         api.patchVote(currId, vote).then((res)=>{
             setVoteCount(res.votes)
-            console.log(res.votes, voteCount)
+    
         })
         }
 
