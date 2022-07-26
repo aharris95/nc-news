@@ -43,6 +43,7 @@ h4 {
   outline-color: #f1356d;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
 }
+
 .cardArticleList {
   margin-right: 10%;
   list-style: none;
@@ -56,4 +57,14 @@ li {
 #topic {
   margin-top: 1rem;
   text-align: left;
+}
+.comment-card{
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: #f1356d;
+  outline-color: #f1356d;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
 }
