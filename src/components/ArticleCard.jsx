@@ -31,9 +31,6 @@ function ArticleCard({ searchedArticles, articleByTopic }) {
               <li>
                 <p>Posted by {article.author}</p>
               </li>
-              {/* <li>
-                <p>{article.votes} Votes</p>
-              </li> */}
               <li>
           <Vote currId={article.article_id} currVotes={article.votes} />
           </li>

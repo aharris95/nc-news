@@ -1,6 +1,6 @@
 function Search({ setArticleFilter }) {
-  function handleFilter() {
-    setArticleFilter(document.getElementById("topic").value);
+  function handleFilter(event) {
+    setArticleFilter(event.target.value);
   }
 
   return (
