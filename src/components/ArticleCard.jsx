@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
+import Vote from "./Vote";
 
-
-function ArticleCard({ searchedArticles, articleByTopic, currArticle }) {
-  let mapArticles = searchedArticles
-  if (articleByTopic){
-    mapArticles = articleByTopic
+function ArticleCard({ searchedArticles, articleByTopic }) {
+  let mapArticles = searchedArticles;
+  if (articleByTopic) {
+    mapArticles = articleByTopic;
   }
   return (
     <section className="article-list">
@@ -19,23 +19,23 @@ function ArticleCard({ searchedArticles, articleByTopic, currArticle }) {
               </li>
               <li className="topicLink">
                 <Link to={`/topic/${article.topic}`}>
-                <p>Topic: {article.topic}</p>
+                  <p>Topic: {article.topic}</p>
                 </Link>
               </li>
               <li>
-                <p>Posted: {article.created_at}</p>
+                <p>Posted at {new Date(article.created_at).toLocaleString()}</p>
               </li>
               <li>
-              <li>
-                <p>{article.body}</p>
+                <p>{article.body.substring(0, 200)}...</p>
               </li>
+              <li>
                 <p>Posted by {article.author}</p>
               </li>
               <li>
-                <p>{article.votes} Votes</p>
-              </li>
+          <Vote currId={article.article_id} currVotes={article.votes} />
+          </li>
               <li>
-                <p>{article.comment_count} people have commented on this article</p>
+                <p>{article.comment_count} Comments</p>
               </li>
             </ul>
           </section>
