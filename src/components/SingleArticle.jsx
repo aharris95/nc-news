@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import CommentSection from "./CommentSection"
+import CommentList from "./CommentList"
 import Vote from "./Vote";
 
 export default function SingleItem() {
@@ -55,7 +55,7 @@ export default function SingleItem() {
           </li>
         </ul>
       </section>}
-      <CommentSection />
+      <CommentList />
     </>
   );
 }

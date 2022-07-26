@@ -10,3 +10,8 @@ export function patchVote(id, vote){
     })
 }
 
+export function getCommentsById(id){
+    return newsApi.get(`articles/${id}/comments`).then((res)=>{
+        return res.data.comments
+    })
+}
