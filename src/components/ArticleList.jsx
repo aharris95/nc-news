@@ -16,7 +16,7 @@ function ArticleList({ articleFilter }) {
     }
     if (articleFilter) {
       url.shift();
-      url.push(`/articles/?filter=${articleFilter}`);
+      url.push(`/articles/?sort_by=${articleFilter}`);
     }
     fetch(`https://nc-news-backendproject.herokuapp.com/api${url[0]}`)
       .then((res) => res.json())
