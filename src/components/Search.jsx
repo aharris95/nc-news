@@ -10,6 +10,8 @@ function Search({ setArticleFilter }) {
         <option value="created_at&order=ASC">Oldest</option>
         <option value="votes&order=DESC">Most Votes</option>
         <option value="votes&order=ASC">Least Votes</option>
+        <option value="comment_count&order=ASC">Least Comments</option>
+        <option value="comment_count&order=DESC">Most Comments</option>
       </select>
     </>
   );
