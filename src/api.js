@@ -15,3 +15,9 @@ export function getCommentsById(id){
         return res.data.comments
     })
 }
+
+export function postComment(body, author, id){
+    return newsApi.post(`articles/${id}/comments`, {body: body, author: author}).then((res)=>{
+        return res.data.comment
+    })
+}
