@@ -10,7 +10,7 @@ function Delete({commentId, userComments, setUserComments}) {
     }
 
 
-    return ( <button onClick={() => handleDelete(commentId)}>Delete</button>     );
+    return ( <button onClick={() => handleDelete(commentId)} className="deleteButton">Delete</button>     );
 }
 
 export default Delete;
