@@ -12,8 +12,12 @@ h1 {
   color: #f1356d;
   padding-top: 15px;
 }
-h4 {
+h4, h3{
   color: #f1356d;
+  padding-top: 15px;
+}
+p{
+  padding-top: 15px;
 }
 .links {
   padding: 20px;
@@ -37,8 +41,8 @@ h4 {
   padding: 1rem;
   margin: 1rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
   box-shadow: #f1356d;
   outline-color: #f1356d;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
@@ -62,12 +66,60 @@ li {
   padding: 1rem;
   margin: 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   box-shadow: #f1356d;
   outline-color: #f1356d;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
 }
-img{
-  height: 150px;
+.profileImage{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 2px solid #f1356d;
+  margin: 20px;
+}
+.voteThumb{
+  fill:#f1356d;
+  padding-right: 15px;
+  padding-top: 15px;
+  
+}
+select, button {
+  appearance:none;
+  -webkit-appearance:none;
+  padding:7px;
+  margin: 5px;
+  align-content: right;
+  border:none;
+  font-weight:600;
+  border-radius:5px;
+  background-color: #f1356d;
+  color: #f2f2f2;
+}
+select:hover, button:hover{
+ cursor: pointer;
+ background-color:#f2f2f2;
+ color:#f1356d;
+}
+.filter{
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  padding: 10px;
+  margin: 0 auto;
+  justify-content: right;
+}
+input{
+  border-radius: 25px;
+  padding-left: 10px;
+  padding:5px;
+  margin-right: 10px;
+  width:50%;
+  margin-bottom: 30px;
+}
+input:focus {
+  outline: none;
+  border: 3px solid #f1356d;
 }

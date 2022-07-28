@@ -26,7 +26,7 @@ function ArticleCard({ searchedArticles, articleByTopic }) {
                 <p>Posted at {new Date(article.created_at).toLocaleString()}</p>
               </li>
               <li>
-                <p>{article.body.substring(0, 200)}...</p>
+                <p>{article.body.substring(0, 300)}...</p>
               </li>
               <li>
                 <p>Posted by {article.author}</p>

@@ -1,5 +1,6 @@
 import * as api from "../api";
 import { useState } from "react";
+import { RiThumbUpFill, RiThumbDownFill } from "react-icons/ri";
 
 
 function Vote({currId, currVotes}) {
@@ -15,8 +16,10 @@ const [voteCount, setVoteCount] = useState(currVotes)
     return ( 
         <>
          <p>{voteCount} Votes</p>
-        <button onClick={()=>{handleVote(1)}}>Like</button>
-        <button onClick={()=>{handleVote(-1)}}>Dislike</button>
+         <div style={{color: 'blue'}}>
+        <RiThumbUpFill className="voteThumb" onClick={()=>{handleVote(1)}}  />
+        <RiThumbDownFill className="voteThumb" onClick={()=>{handleVote(-1)}}  />
+        </div>
         </>
      );
 }

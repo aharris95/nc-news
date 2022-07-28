@@ -4,7 +4,8 @@ function Search({ setArticleFilter }) {
   }
 
   return (
-    <>
+    <div className="filter">
+      <p>Sort By: </p>
       <select name="topic" id="topic" onChange={handleFilter}>
         <option value="created_at&order=DESC">Newest</option>
         <option value="created_at&order=ASC">Oldest</option>
@@ -13,7 +14,7 @@ function Search({ setArticleFilter }) {
         <option value="comment_count&order=ASC">Least Comments</option>
         <option value="comment_count&order=DESC">Most Comments</option>
       </select>
-    </>
+    </div>
   );
 }
 
