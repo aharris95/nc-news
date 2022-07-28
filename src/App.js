@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Topic from "./components/Topic";
 import Profile from "./components/Profile";
+import ErrorPage from "./components/ErrorPage";
 import SingleArticle from "./components/SingleArticle";
 import { UserContext } from "./contexts/User";
 import {useState} from 'react'
@@ -29,6 +30,7 @@ function App() {
           <Route path="/topic/:topic" element={<Topic />} />
           <Route path="/article/:article_id" element={<SingleArticle />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
       </UserContext.Provider>

@@ -8,6 +8,7 @@ import Vote from "./Vote";
 export default function SingleItem() {
   const [currArticle, setCurrArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null)
   const { article_id } = useParams();
 
   useEffect(() => {
@@ -15,17 +16,27 @@ export default function SingleItem() {
     fetch(
       `https://nc-news-backendproject.herokuapp.com/api/articles/${article_id}`
     )
-      .then((res) => res.json())
+      .then((res) => {
+        if(!res.ok){
+          throw Error('could not fetch the data for that resource')
+      }
+       return res.json()
+      })
       .then((body) => {
         setCurrArticle(body.article);
+        setIsLoading(false);
+        setError(null)
+      }).catch((err) => {
+        setError( err.message );
         setIsLoading(false);
       });
   }, [article_id]);
 
   return (
     <>
-      {isLoading ? <div>Loading...</div> :
-      <section className="article-card" key={currArticle.article_id}>
+    {error && <div>{error}</div>}
+      {isLoading && <div>Loading...</div>}
+      {!isLoading && !error && <section className="article-card" key={currArticle.article_id}>
         <ul className="cardArticleList">
           <li className="idLink">
             <Link to={`/article/${currArticle.article_id}`}>
@@ -56,7 +67,7 @@ export default function SingleItem() {
           </li>
         </ul>
       </section>}
-      <CommentList />
+      {!isLoading && !error &&<CommentList />}
     </>
   );
 }
