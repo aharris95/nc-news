@@ -21,3 +21,13 @@ export function postComment(body, author, id){
         return res.data.comment
     })
 }
+
+export function getArticles(){
+    return newsApi.get(`articles`).then((res)=>{
+        return res.data.articles
+    })
+}
+
+export function deleteComment(id){
+    return newsApi.delete(`comments/${id}`)
+}
